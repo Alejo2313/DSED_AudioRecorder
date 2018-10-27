@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Sat Oct 27 23:08:08 2018
+# Process ID: 19284
+# Current directory: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.sim/sim_1/behav/xsim.dir/en_4_clycles_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.sim/sim_1/behav/webtalk.log
+# Journal file: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.sim/sim_1/behav/xsim.dir/en_4_clycles_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Oct 27 23:08:10 2018...
