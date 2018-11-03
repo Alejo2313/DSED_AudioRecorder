@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Oct 30 13:51:13 2018
+# Process ID: 11308
+# Current directory: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8276 D:\OneDrive\Documentos\Universidad\DSED\DSED_PROJ\DSED_FINAL.xpr
+# Log file: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/vivado.log
+# Journal file: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.xpr
+update_compile_order -fileset sources_1
+close [ open D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd w ]
+add_files D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd
+update_compile_order -fileset sources_1
