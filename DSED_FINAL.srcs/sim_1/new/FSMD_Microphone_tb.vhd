@@ -1,11 +1,13 @@
 library IEEE;
 use IEEE.Std_logic_1164.all;
 use IEEE.Numeric_Std.all;
+use work.package_dsed.all;
 
-entity en_4_clycles_tb is
+
+entity FSMD_microphone_tb is
 end;
 
-architecture bench of en_4_clycles_tb is
+architecture bench of FSMD_microphone_tb is
 
   component en_4_clycles
       Port ( clk_12megas : in STD_LOGIC;
@@ -16,14 +18,14 @@ architecture bench of en_4_clycles_tb is
   end component;
   
   
-  entity FSMD_microphone is
+  component  FSMD_microphone is
       Port ( clk_12megas : in STD_LOGIC;
              reset : in STD_LOGIC;
              enable_4cycles : in STD_LOGIC;
              micro_data : in STD_LOGIC;
              sample_out : out STD_LOGIC_VECTOR (sample_size -1 downto 0);
              sample_out_ready : out STD_LOGIC);
-  end FSMD_microphone;
+  end component;
   
   
 
@@ -31,9 +33,12 @@ architecture bench of en_4_clycles_tb is
   signal reset: STD_LOGIC;
   signal clk_3megas: STD_LOGIC;
   signal en_2_cycles: STD_LOGIC;
-  signal en_4_cycles: STD_LOGIC;
+  signal en_4_cycles: STD_LOGIC ;
+  signal micro_data: STD_LOGIC;
+  signal sample_out : STD_LOGIC_VECTOR (sample_size -1 downto 0);
+  signal sample_out_ready : STD_LOGIC;
 
-  constant clock_period: time := 10 ns;
+  constant clock_period: time := 83 ns;
   signal stop_the_clock: boolean;
 
 begin
@@ -43,16 +48,22 @@ begin
                                clk_3megas  => clk_3megas,
                                en_2_cycles => en_2_cycles,
                                en_4_cycles => en_4_cycles );
+                               
+                               
+  uut1: FSMD_microphone port map ( clk_12megas => clk_12megas,
+                                   reset       => reset,
+                                   enable_4cycles => en_4_cycles,
+                                   micro_data  => micro_data,
+                                   sample_out  => sample_out,
+                                   sample_out_ready => sample_out_ready);
 
   stimulus: process
   begin
   
-    -- Put initialisation code here
-
-
-    -- Put test bench stimulus code here
-
-    stop_the_clock <= true;
+    reset <= '1';
+    micro_data <= '1';
+    wait for 160 ns;
+    reset <= '0';
     wait;
   end process;
 

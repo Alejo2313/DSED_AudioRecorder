@@ -1,1 +1,0 @@
--wto "2d143609b749460bb8217bffd1e12db9" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "en_4_clycles_tb_behav" "xil_defaultlib.en_4_clycles_tb" -log "elaborate.log" 

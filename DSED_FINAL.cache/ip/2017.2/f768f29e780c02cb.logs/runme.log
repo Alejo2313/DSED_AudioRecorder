@@ -1,0 +1,51 @@
+
+*** Running vivado
+    with args -log clk_100Mhz.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_100Mhz.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source clk_100Mhz.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 341.988 ; gain = 71.824
+INFO: [Synth 8-638] synthesizing module 'clk_100Mhz' [d:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/ip/clk_100Mhz/clk_100Mhz.v:70]
+INFO: [Synth 8-638] synthesizing module 'clk_100Mhz_clk_wiz' [d:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/ip/clk_100Mhz/clk_100Mhz_clk_wiz.v:68]
+INFO: [Synth 8-638] synthesizing module 'IBUF' [D:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14470]
+INFO: [Synth 8-256] done synthesizing module 'IBUF' (1#1) [D:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:14470]
+INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [D:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
+INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (2#1) [D:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:20759]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [D:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [D:/Xilinx/Vivado/2017.2/scripts/rt/data/unisim_comp.v:607]
+INFO: [Synth 8-256] done synthesizing module 'clk_100Mhz_clk_wiz' (4#1) [d:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/ip/clk_100Mhz/clk_100Mhz_clk_wiz.v:68]
+INFO: [Synth 8-256] done synthesizing module 'clk_100Mhz' (5#1) [d:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/ip/clk_100Mhz/clk_100Mhz.v:70]
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 382.066 ; gain = 111.902
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 382.066 ; gain = 111.902
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.195 . Memory (MB): peak = 606.250 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 606.250 ; gain = 336.086
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 606.250 ; gain = 336.086
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 606.250 ; gain = 336.086
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 606.250 ; gain = 336.086
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 606.250 ; gain = 336.086
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 628.430 ; gain = 358.266
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 628.430 ; gain = 358.266
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 637.570 ; gain = 367.406
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     2|
+|2     |MMCME2_ADV |     1|
+|3     |IBUF       |     1|
++------+-----------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 637.570 ; gain = 367.406
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 651.094 ; gain = 391.391
