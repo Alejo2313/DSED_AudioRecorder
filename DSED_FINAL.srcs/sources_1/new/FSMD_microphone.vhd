@@ -44,7 +44,6 @@ begin
                 en4c_reg <= en4c_next;
                 if( en4c_reg = '1') then
                     sample_out_ready_reg <= sample_out_ready_n;
-                    
                     md_reg <= md_next;
                     dato1   <= dato1_n;
                     dato2   <= dato2_n;
