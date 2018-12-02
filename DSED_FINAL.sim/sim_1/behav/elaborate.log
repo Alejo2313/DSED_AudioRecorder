@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 2d143609b749460bb8217bffd1e12db9 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot FSMD_microphone_tb_behav xil_defaultlib.FSMD_microphone_tb -log elaborate.log 
+Running: D:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 2d143609b749460bb8217bffd1e12db9 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot fir_filter_tb_behav xil_defaultlib.fir_filter_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,7 +12,11 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package xil_defaultlib.package_dsed
-Compiling architecture behavioral of entity xil_defaultlib.en_4_clycles [en_4_clycles_default]
-Compiling architecture behavioral of entity xil_defaultlib.FSMD_microphone [fsmd_microphone_default]
-Compiling architecture bench of entity xil_defaultlib.fsmd_microphone_tb
-Built simulation snapshot FSMD_microphone_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.FIR_Controller [fir_controller_default]
+Compiling architecture behavioral of entity xil_defaultlib.MUX_8 [mux_8_default]
+Compiling architecture behavioral of entity xil_defaultlib.REG [\REG(port_size=16)\]
+Compiling architecture behavioral of entity xil_defaultlib.REG [\REG(port_size=20)\]
+Compiling architecture behavioral of entity xil_defaultlib.FIR_DATAPATH [fir_datapath_default]
+Compiling architecture behavioral of entity xil_defaultlib.fir_filter [fir_filter_default]
+Compiling architecture bench of entity xil_defaultlib.fir_filter_tb
+Built simulation snapshot fir_filter_tb_behav

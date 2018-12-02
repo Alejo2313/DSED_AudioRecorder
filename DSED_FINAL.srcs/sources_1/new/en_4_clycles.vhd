@@ -43,10 +43,10 @@ begin
         begin
             --asynchronus reset
             if(reset = '1') then
-                clk_3megas_out <= '0';
+                clk_3megas_out  <= '0';
                 en_4_cycles_out <= '0';
                 en_2_cycles_out <= '0';
-                counter <= '0'; 
+                counter         <= '0'; 
             end if;
             
             if(rising_edge(clk_12megas)) then

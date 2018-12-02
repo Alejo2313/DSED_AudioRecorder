@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Sun Nov 11 17:16:23 2018
-# Process ID: 9888
+# Start of session at: Sun Dec  2 14:43:07 2018
+# Process ID: 15412
 # Current directory: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1
 # Command line: vivado.exe -log controlador.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlador.tcl
 # Log file: D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/controlador.vds
@@ -15,39 +15,40 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6908 
+INFO: Helper process launched with PID 11852 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 341.797 ; gain = 69.820
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 342.301 ; gain = 70.684
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'controlador' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:47]
-INFO: [Synth 8-3491] module 'clk_12_Meg' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-9888-DESKTOP-CQ2ECPO/realtime/clk_12_Meg_stub.vhdl:5' bound to instance 'utt0' of component 'clk_12_Meg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:101]
-INFO: [Synth 8-638] synthesizing module 'clk_12_Meg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-9888-DESKTOP-CQ2ECPO/realtime/clk_12_Meg_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'en_4_clycles' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/en_4_clycles.vhd:26' bound to instance 'utt1' of component 'en_4_clycles' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'controlador' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:40]
+INFO: [Synth 8-3491] module 'clk_12_Meg' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-15412-DESKTOP-CQ2ECPO/realtime/clk_12_Meg_stub.vhdl:5' bound to instance 'utt0' of component 'clk_12_Meg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'clk_12_Meg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-15412-DESKTOP-CQ2ECPO/realtime/clk_12_Meg_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'en_4_clycles' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/en_4_clycles.vhd:26' bound to instance 'utt1' of component 'en_4_clycles' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:96]
 INFO: [Synth 8-638] synthesizing module 'en_4_clycles' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/en_4_clycles.vhd:34]
 WARNING: [Synth 8-6014] Unused sequential element en_2_cycles_out_reg was removed.  [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/en_4_clycles.vhd:48]
 INFO: [Synth 8-256] done synthesizing module 'en_4_clycles' (1#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/en_4_clycles.vhd:34]
-INFO: [Synth 8-3491] module 'FSMD_microphone' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:36' bound to instance 'uut2' of component 'FSMD_microphone' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:120]
-INFO: [Synth 8-638] synthesizing module 'FSMD_microphone' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:45]
-WARNING: [Synth 8-614] signal 'state_n' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'primer_ciclo' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'src0_data1' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'src1_data1' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'src0_data2' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'src1_data2' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'src0_cuenta' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-614] signal 'src1_cuenta' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:112]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:76]
-INFO: [Synth 8-256] done synthesizing module 'FSMD_microphone' (2#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:45]
-INFO: [Synth 8-3491] module 'PWM' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:35' bound to instance 'uut3' of component 'PWM' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:128]
-INFO: [Synth 8-638] synthesizing module 'PWM' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'PWM' (3#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'controlador' (4#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:47]
+INFO: [Synth 8-3491] module 'FSMD_microphone' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:7' bound to instance 'uut2' of component 'FSMD_microphone' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'FSMD_microphone' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:16]
+WARNING: [Synth 8-614] signal 'sample_out_reg' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'sample_out_ready_reg' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'en4c_reg' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'md_reg' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'primer_ciclo' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'state_n' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'src0_data1' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'src1_data1' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'src0_data2' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'src1_data2' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'src0_cuenta' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+WARNING: [Synth 8-614] signal 'src1_cuenta' is read in the process but is not in the sensitivity list [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'FSMD_microphone' (2#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:16]
+INFO: [Synth 8-3491] module 'pwm' declared at 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:34' bound to instance 'uut3' of component 'PWM' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'pwm' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'pwm' (3#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'controlador' (4#1) [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd:40]
 WARNING: [Synth 8-3917] design controlador has port micro_LR driven by constant 1
 WARNING: [Synth 8-3917] design controlador has port jack_sd driven by constant 1
-WARNING: [Synth 8-3331] design PWM has unconnected port clk_12megas
-WARNING: [Synth 8-3331] design PWM has unconnected port reset
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 382.121 ; gain = 110.145
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 383.379 ; gain = 111.762
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -57,15 +58,15 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 382.121 ; gain = 110.145
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 383.379 ; gain = 111.762
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-9888-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc] for cell 'utt0'
-Finished Parsing XDC File [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-9888-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc] for cell 'utt0'
+Parsing XDC File [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-15412-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc] for cell 'utt0'
+Finished Parsing XDC File [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-15412-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc] for cell 'utt0'
 Parsing XDC File [C:/Users/Alejo/Downloads/Nexys4DDR_Master.xdc]
 Finished Parsing XDC File [C:/Users/Alejo/Downloads/Nexys4DDR_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Alejo/Downloads/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/controlador_propImpl.xdc].
@@ -77,36 +78,34 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 694.102 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 694.605 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_100Mhz. (constraint file  D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-9888-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100Mhz. (constraint file  D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-9888-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100Mhz. (constraint file  D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-15412-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100Mhz. (constraint file  D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/.Xil/Vivado-15412-DESKTOP-CQ2ECPO/dcp3/clk_100Mhz_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for utt0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "state_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "src1_cuenta" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "sample_out_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "primer_ciclo_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "sample_request" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element r_reg_reg was removed.  [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:55]
-WARNING: [Synth 8-327] inferring latch for variable 'sample_out_n_reg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:84]
-WARNING: [Synth 8-327] inferring latch for variable 'sample_out_ready_n_reg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:85]
-WARNING: [Synth 8-327] inferring latch for variable 'primer_ciclo_n_reg' [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:86]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -124,16 +123,19 @@ Detailed RTL Component Info :
 +---Registers : 
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 3     
-	                1 Bit    Registers := 6     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
 +---Muxes : 
 	   4 Input      9 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 5     
 	   2 Input      8 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -155,17 +157,20 @@ Detailed RTL Component Info :
 +---Registers : 
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 3     
-	                1 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   4 Input      9 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 5     
 	   2 Input      8 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 1     
-Module PWM 
+Module pwm 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      9 Bit       Adders := 1     
@@ -173,7 +178,7 @@ Detailed RTL Component Info :
 	                9 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -189,15 +194,14 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element uut2/sample_out_ready_reg was removed.  [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:73]
+WARNING: [Synth 8-6014] Unused sequential element uut2/sample_out_ready_reg_reg was removed.  [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd:35]
+INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "uut2/src1_cuenta" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "uut2/sample_out_n" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element uut3/r_reg_reg was removed.  [D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd:55]
 WARNING: [Synth 8-3917] design controlador has port micro_LR driven by constant 1
 WARNING: [Synth 8-3917] design controlador has port jack_sd driven by constant 1
-WARNING: [Synth 8-3332] Sequential element (uut2/sample_out_ready_n_reg) is unused and will be removed from module controlador.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -211,13 +215,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'utt0/clk_out1' to pin 'utt0/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,7 +233,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -253,7 +257,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -266,7 +270,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -278,25 +282,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -316,45 +320,43 @@ Report Cell Usage:
 |1     |clk_12_Meg_bbox |     1|
 |2     |CARRY4          |     2|
 |3     |LUT1            |     4|
-|4     |LUT2            |     6|
-|5     |LUT3            |    17|
+|4     |LUT2            |     4|
+|5     |LUT3            |    19|
 |6     |LUT4            |    19|
-|7     |LUT5            |    15|
-|8     |LUT6            |    24|
-|9     |FDCE            |    34|
-|10    |FDRE            |    13|
-|11    |LD              |     9|
-|12    |IBUF            |     2|
-|13    |OBUF            |    12|
+|7     |LUT5            |    17|
+|8     |LUT6            |    21|
+|9     |FDCE            |    37|
+|10    |FDRE            |    14|
+|11    |IBUF            |     2|
+|12    |OBUF            |    12|
 +------+----------------+------+
 
 Report Instance Areas: 
 +------+---------+----------------+------+
 |      |Instance |Module          |Cells |
 +------+---------+----------------+------+
-|1     |top      |                |   158|
-|2     |  utt1   |en_4_clycles    |     6|
-|3     |  uut2   |FSMD_microphone |   112|
-|4     |  uut3   |PWM             |    25|
+|1     |top      |                |   152|
+|2     |  utt1   |en_4_clycles    |     7|
+|3     |  uut2   |FSMD_microphone |   105|
+|4     |  uut3   |pwm             |    25|
 +------+---------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 694.102 ; gain = 110.145
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 694.102 ; gain = 422.125
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 694.605 ; gain = 111.762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 694.605 ; gain = 422.988
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 9 instances were transformed.
-  LD => LDCE: 9 instances
+No Unisim elements were transformed.
 
-32 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+33 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 694.102 ; gain = 433.414
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:37 . Memory (MB): peak = 694.605 ; gain = 434.203
 INFO: [Common 17-1381] The checkpoint 'D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.runs/synth_1/controlador.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 694.102 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 11 17:16:55 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 694.605 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  2 14:44:16 2018...
