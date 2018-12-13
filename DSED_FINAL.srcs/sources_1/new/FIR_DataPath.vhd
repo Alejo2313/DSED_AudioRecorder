@@ -90,7 +90,7 @@ begin
                             Port_Out  => reg3_out );
                             
                             
-    reg1_in <= mux2_out*mux1_out;
+    reg1_in <= mux2_out * mux1_out;
     reg3_in <= reg2_out + reg3_out;
     y <= reg3_out;
     

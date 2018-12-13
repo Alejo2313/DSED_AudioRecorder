@@ -64,7 +64,7 @@ architecture Behavioral of fir_filter is
     signal clr          : STD_LOGIC;                   
     signal control      : STD_LOGIC_VECTOR(2 downto 0); 
     signal sample_ready : STD_LOGIC;
-    signal sample_o, sample_test    : signed(19 downto 0);
+    signal sample_o     : signed(19 downto 0);
                
 begin
 
@@ -107,7 +107,11 @@ begin
             end if;
             
             if(sample_ready = '1') then
-                Sample_Out  <= sample_o(14 downto 7);
+                Sample_Out  <= sample_o(14 downto 7);  -- EXPLICACION: El numero más grande que aparecerá a la salida es
+                                                       -- 2*(1-2^(-7))^2 = 1.968...., por tanto, los bits más significativos
+                                                       -- estarán desde B13 hasta B0 (la salida tiene formato <6,14>), los demás
+                                                       -- son extensión de signo. Como necesitamos truncar al formato <1,7>, cogemos
+                                                       -- el B14 como signo 
             end if;
             
             Sample_out_ready    <= sample_ready;
