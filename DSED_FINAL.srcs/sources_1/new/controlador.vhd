@@ -141,7 +141,11 @@ architecture Behavioral of controlador is
     signal Sample_In_enable, Sample_In_enable_n : STD_LOGIC;
     signal Sample_Out_ready_filter    : STD_LOGIC;
     
+    signal led_out_reg, led_out_n : STD_LOGIC_VECTOR(7 downto 0);
+        
     constant full_memory    : unsigned(18 downto 0) := (others => '1');
+    
+    
     
         
 begin
@@ -211,7 +215,7 @@ begin
     micro_LR    <= '1';
     jack_sd     <= '1';   
     micro_clk   <= clk_3megas;                        
-    led_out     <=  memory_out;
+    led_out     <=  led_out_reg;
     
     
     
@@ -230,6 +234,7 @@ begin
             last_b <= (others => '0');
             sample_in_enable <= '0';
             PWM_in <= (others => '0');
+            led_out_reg <= (others => '0');
             
         elsif( rising_edge(clk_12megas)) then
             state   <= state_n;
@@ -240,6 +245,7 @@ begin
             addra   <= addra_n;
             Sample_In_enable <= Sample_In_enable_n;
             PWM_in <= PWM_in_n;
+            led_out_reg <= led_out_n;
             
         end if;
     end process;
@@ -297,6 +303,7 @@ begin
         cur_b_n   <= cur_b;
         last_b_n  <= last_b;
         addra_n   <= addra;
+        led_out_n <= (others => '0');
         
         sample_in_enable_n <= '0';
         
@@ -321,6 +328,7 @@ begin
             when REC  =>
                 ena_n <= '1';
                 PWM_in_n <= (others =>'0');
+                led_out_n <= memory_out;
                 
                 if(last_b /= full_memory) then
                     --ALARM : 3 seconds before ((2^19 -1)-(3*20e3))
@@ -332,32 +340,33 @@ begin
                     end if;
                   -- end Alarm           
                              
-                             
                     if( sample_out_ready = '1') then
                        addra_n <=  last_b;
                        wea_n <= "1";
                        last_b_n <= last_b + 1; 
                     else
                         wea_n <= "0";
-                    end if;
+                    end if;                    
                 else
                     --Alarm -> full memeory
                     PWM_in_n <= (others => '1');
                 end if;
                 
             when PLAY =>
-                ena_n <= '1';   
+                ena_n <= '1';  
+                led_out_n <= PWM_in; 
+                
                 if(sample_request = '1') then
                     addra_n <= cur_b;
+                    cur_b_n <= cur_b + 1;
                     
                     if( SW0 = '1') then
                         Sample_In_enable_n <= '1';
-                        PWM_in_n <= STD_LOGIC_VECTOR( ( NOT filter_out(7))&filter_out(6 downto 0) );--filter out
-                        cur_b_n <= cur_b + 1;
+                        PWM_in_n <= STD_LOGIC_VECTOR((NOT filter_out(7))&filter_out(6 downto 0) );--filter out
                     else
                          PWM_in_n <=  memory_out;
-                         cur_b_n <= cur_b + 1;
                     end if;
+                    
                 else
                     Sample_In_enable_n <= '0';     
                 end if;

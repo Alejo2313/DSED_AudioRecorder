@@ -70,8 +70,8 @@ begin
     wait for 10 ns;
     reset <= '0';
     
-    SW0 <= '0';
-    SW1 <= '1';
+    SW0 <= '1';
+    SW1 <= '0';
     BTNR <= '0';
     BTNC <= '0';
     micro_data <= '1';

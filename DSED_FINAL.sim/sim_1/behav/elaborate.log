@@ -19,6 +19,7 @@ Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
 Compiling package ieee.std_logic_textio
+Compiling package ieee.std_logic_unsigned
 Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
 Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9,1,1,1,4,1,7)\]
 Compiling architecture mmcme2_adv_v of entity unisim.MMCME2_ADV [\MMCME2_ADV(clkfbout_mult_f=49.8...]
@@ -182,6 +183,8 @@ Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0_blk_mem_
 Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0_blk_mem_gen_v8_3_6_synth [blk_mem_gen_0_blk_mem_gen_v8_3_6...]
 Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0_blk_mem_gen_v8_3_6 [blk_mem_gen_0_blk_mem_gen_v8_3_6...]
 Compiling architecture structure of entity xil_defaultlib.blk_mem_gen_0 [blk_mem_gen_0_default]
+Compiling architecture a_decod7s of entity xil_defaultlib.decod7s [decod7s_default]
+Compiling architecture behavioral of entity xil_defaultlib.Seconds2segments [seconds2segments_default]
 Compiling architecture behavioral of entity xil_defaultlib.controlador [controlador_default]
 Compiling architecture bench of entity xil_defaultlib.controlador_tb
 Built simulation snapshot controlador_tb_behav

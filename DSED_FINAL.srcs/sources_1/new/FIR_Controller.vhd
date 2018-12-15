@@ -65,13 +65,14 @@ begin
         begin
             control_next <= (others => '0');
             clr_next    <= '0';
-            state_next <= start;
+            state_next <= state;
             Sample_out_ready_next <= '0';
             
-            case state is 
+            case state is
                 when start  =>      --solo vuelve tras un reset
                     state_next  <= waits;
                     Sample_out_ready_next <= '0';
+                    
                 when waits  =>
                     clr_next<= '1';
                     Sample_out_ready_next <= '0';

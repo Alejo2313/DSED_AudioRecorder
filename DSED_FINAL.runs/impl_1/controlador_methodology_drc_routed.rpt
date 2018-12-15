@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Sat Dec 15 02:46:24 2018
+| Date         : Sat Dec 15 12:58:03 2018
 | Host         : DESKTOP-CQ2ECPO running 64-bit major release  (build 9200)
 | Command      : report_methodology -file controlador_methodology_drc_routed.rpt -rpx controlador_methodology_drc_routed.rpx
 | Design       : controlador
@@ -23,14 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 51
+             Violations found: 50
 +-----------+----------+------------------------------------------------+------------+
 | Rule      | Severity | Description                                    | Violations |
 +-----------+----------+------------------------------------------------+------------+
 | SYNTH-9   | Warning  | Small multiplier                               | 12         |
 | TIMING-6  | Warning  | No common primary clock between related clocks | 2          |
 | TIMING-18 | Warning  | Missing input or output delay                  | 36         |
-| TIMING-20 | Warning  | Non-clocked latch                              | 1          |
 +-----------+----------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -283,11 +282,6 @@ Related violations: <none>
 TIMING-18#36 Warning
 Missing input or output delay  
 An output delay is missing on state_out[2] relative to clock(s) VIRTUAL_clk_out1_clk_100Mhz 
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch uut2/sample_out_ready_n_reg cannot be properly analyzed as its control pin uut2/sample_out_ready_n_reg/G is not reached by a timing clock
 Related violations: <none>
 
 

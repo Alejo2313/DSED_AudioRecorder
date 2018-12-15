@@ -55,7 +55,7 @@ architecture Behavioral of FSMD_microphone is
     type state_t is (s0, s1, s2);
     
     signal dato1, dato1_n, dato2, dato2_n, sample_out_n, sample_out_reg : STD_LOGIC_VECTOR (sample_size -1 downto 0) := (others => '0');
-    signal sample_out_ready_n, primer_ciclo, primer_ciclo_n : STD_LOGIC := '0';
+    signal sample_out_ready_n, primer_ciclo, primer_ciclo_n, sample_out_ready_reg : STD_LOGIC := '0';
     signal state, state_n : state_t := s0;
     
     signal  src0_data1, src0_data2, src1_data1, src1_data2 : STD_LOGIC_VECTOR (sample_size -1 downto 0) := (others => '0');
@@ -70,20 +70,20 @@ begin
                 dato1   <= (others=>'0');
                 dato2   <= (others=>'0');
                 sample_out_reg  <= (others=>'0');
-                sample_out_ready    <= '0';
+                sample_out_ready_reg    <= '0';
                 cuenta  <= (others =>  '0');
                 primer_ciclo    <= '0';
                 state   <= s0;
             
             elsif(rising_edge(clk_12megas)) then
-                sample_out_ready <= '0';
+                sample_out_ready_reg <= '0';
                 if( enable_4_cycles = '1') then
                     dato1   <= dato1_n;
                     dato2   <= dato2_n;
                     state   <= state_n;
                     cuenta  <= cuenta_n;
                     sample_out_reg <= sample_out_n;
-                    sample_out_ready <= sample_out_ready_n; 
+                    sample_out_ready_reg <= sample_out_ready_n; 
                     primer_ciclo <= primer_ciclo_n;                
                 end if;
             end if;
@@ -121,6 +121,7 @@ begin
          src1_cuenta  <= (others => '0');
          primer_ciclo_n <= primer_ciclo;
          sample_out_n <= sample_out_reg;
+         sample_out_ready_n <= sample_out_ready_reg;
         
          case state_n is
              when s0 =>
@@ -187,7 +188,9 @@ begin
         cuenta_n <=  STD_LOGIC_VECTOR(unsigned(src0_cuenta) + unsigned(src1_cuenta));
     end process;
     
+    
     --output logic 
     sample_out <= sample_out_reg;
+    sample_out_ready <= sample_out_ready_reg;
     
 end Behavioral;

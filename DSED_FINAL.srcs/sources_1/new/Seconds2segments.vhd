@@ -76,14 +76,24 @@ begin
     select an_reg <=    "11111110" when  "00",
                         "11111101" when  "01",
                         "11111011" when  "10",
-                        "11110111" when  "11";
+                        "11110111" when  "11",
+                        "11111111" when others;
+      
+      
+      
+      
+      
+      
+      
                         
     with counter(14) 
         select addr <=  addrA when  '1',
-                        addrB when '0';             
+                        addrB when '0',
+                        (others => '0') when others; 
+                                    
     with counter(14) 
         select size <=  (others => '1') when  '1',
-                        (others => '0') when '0';   
+                        (others => '0') when  others;
                                                                    
     divider  <= ( size - addr) / 20000; 
     uSeconds <= STD_LOGIC_VECTOR(divider(4 downto 0) rem 10 );
@@ -91,7 +101,8 @@ begin
     
     with counter(13)
     select D <=  uSeconds(3 downto 0) when '0',
-                 dSeconds(3 downto 0) when '1';
+                 dSeconds(3 downto 0) when '1',
+                 (others => '0') when  others;
                  
     an <= an_reg;
     seg <= S;
