@@ -56,7 +56,7 @@ architecture Behavioral of fir_filter is
     end component;
     
     
-    constant low_pass_c             : MUX_IN_8_8 := ("00000101", "00011111","00111001","00000001","00011111");
+    constant low_pass_c             : MUX_IN_8_8 := ("00000101", "00011111","00111001","00000001","00000101");
     constant band_pass_c            : MUX_IN_8_8 := ("10000001", "10011111","01001101","10011111","10000001");
     constant zero_MUX_8             : MUX_IN_8_8 := ("00000000", "00000000","00000000","00000000","00000000");
     

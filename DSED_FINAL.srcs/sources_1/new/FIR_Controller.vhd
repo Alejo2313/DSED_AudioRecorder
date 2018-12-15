@@ -61,8 +61,13 @@ begin
     end process;
     
     
-    process(state, Sample_In_enable) 
+    process(state, Sample_In_enable)       
         begin
+            control_next <= (others => '0');
+            clr_next    <= '0';
+            state_next <= start;
+            Sample_out_ready_next <= '0';
+            
             case state is 
                 when start  =>      --solo vuelve tras un reset
                     state_next  <= waits;

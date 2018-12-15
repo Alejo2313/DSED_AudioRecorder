@@ -41,9 +41,11 @@ entity pwm is
 end pwm;
 
 architecture Behavioral of pwm is
-    signal r_reg : STD_LOGIC_VECTOR(log2c(ciclos)-1 downto 0);
+
+
+signal r_reg : STD_LOGIC_VECTOR(log2c(ciclos)-1 downto 0);
 signal r_next : STD_LOGIC_VECTOR(log2c(ciclos)-1 downto 0);
-signal buff_reg , buff_next: STD_LOGIC;
+signal buff_reg , buff_next, sample_reg, sample_reg_n : STD_LOGIC;
 
 
 begin
@@ -56,6 +58,12 @@ begin
         buff_reg <= '0';
     end if;
     if(rising_edge(clk_12megas)) then
+        if(sample_reg = '1') then       --We need only one 12Mhz cycle!!!
+            sample_reg <= '0';
+        else
+            sample_reg <= sample_reg_n;
+        end if;
+        
         if(en_2_cycles = '1') then
             r_reg <= r_next;
             buff_reg <= buff_next;
@@ -69,11 +77,14 @@ end process;
 -- Next state logic
 r_next <= STD_LOGIC_VECTOR(unsigned(r_reg) +  1) when  unsigned(r_reg) /= "100101100" else
       (others => '0');
-sample_request <= '1' when  unsigned(r_reg) = "100101100" else
+      
+sample_reg_n <= '1' when  unsigned(r_reg) = "100101100" else
               '0';
-buff_next <= '1' when ( unsigned(r_reg) < (unsigned(sample_in)) or ( sample_in = "00000000")) else
-         '0';    
+buff_next <= '1' when ( unsigned(r_reg) < (unsigned(sample_in)) ) else
+         '0'; 
+            
 -- Output logic         
 pwm_pulse <= buff_reg;     
+sample_request <= sample_reg;
 
 end Behavioral;

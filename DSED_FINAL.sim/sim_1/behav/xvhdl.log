@@ -133,5 +133,27 @@ INFO: [VRFC 10-307] analyzing entity blk_mem_gen_0_blk_mem_gen_top
 INFO: [VRFC 10-307] analyzing entity blk_mem_gen_0_blk_mem_gen_v8_3_6_synth
 INFO: [VRFC 10-307] analyzing entity blk_mem_gen_0_blk_mem_gen_v8_3_6
 INFO: [VRFC 10-307] analyzing entity blk_mem_gen_0
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/BRAM_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity BRAM_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/ip/clk_12_Meg/clk_12_Meg_sim_netlist.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity clk_12_Meg_clk_100Mhz_clk_wiz
+INFO: [VRFC 10-307] analyzing entity clk_12_Meg
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/package_dsed.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FIR_Controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FIR_Controller
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FIR_DataPath.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FIR_DATAPATH
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/FSMD_microphone.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FSMD_microphone
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/PWM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pwm
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/REG.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity REG
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/controlador.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity controlador
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/en_4_clycles.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity en_4_cycles
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/fir_filter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity fir_filter
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sources_1/new/MUX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MUX_8
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/OneDrive/Documentos/Universidad/DSED/DSED_PROJ/DSED_FINAL.srcs/sim_1/new/controlador_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity controlador_tb
