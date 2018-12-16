@@ -53,25 +53,28 @@ begin
         if(Reset = '1') then
             state   <= start;
         elsif(rising_edge(clk)) then
+            Sample_out_ready <= Sample_out_ready_next;
             state   <= state_next;
             clr     <= clr_next;
             control <= control_next;
-            Sample_out_ready <= Sample_out_ready_next;
         end if;
     end process;
     
     
     process(state, Sample_In_enable)       
         begin
-            control_next <= (others => '0');
-            clr_next    <= '0';
-            state_next <= state;
+            --Default values 
             Sample_out_ready_next <= '0';
+            control_next    <= (others => '0');
+            state_next      <= state;            
+            clr_next        <= '0';
             
             case state is
+------------------------------------------------            
                 when start  =>      --solo vuelve tras un reset
+                    Sample_out_ready_next <= '0';                
                     state_next  <= waits;
-                    Sample_out_ready_next <= '0';
+------------------------------------------------            
                     
                 when waits  =>
                     clr_next<= '1';
@@ -80,29 +83,45 @@ begin
                         clr_next     <= '0';
                         state_next   <= t0;
                         control_next <= "000";
-                    end if;
+                    end if;                   
+------------------------------------------------            
+                    
                when t0 =>
                     clr_next     <= '0';
                     control_next    <= "001";
                     state_next      <= t1;
+------------------------------------------------            
+                    
                when t1 =>
                     control_next    <= "010";
                     state_next      <= t2;
+------------------------------------------------            
+                    
                when t2 =>
                     control_next    <= "011";
                     state_next      <= t3;
+------------------------------------------------            
+                    
                when t3 =>
                     control_next    <= "100";
                     state_next      <= t4;
+------------------------------------------------            
+                    
                when t4 =>
                     control_next    <= "101";
                     state_next      <= t5;
+------------------------------------------------            
+                    
                when t5 =>
                     control_next    <= "110";
                     state_next      <= t6;
+------------------------------------------------            
+                    
                when t6 =>
                     control_next    <= "111";
                     state_next      <= t7;
+------------------------------------------------            
+                    
                when t7 =>
                     control_next    <= "111";
                     Sample_out_ready_next <= '1';

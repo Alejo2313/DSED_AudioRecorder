@@ -50,12 +50,12 @@ architecture Behavioral of FIR_DATAPATH is
                     Port_Out    : out signed(PORT_SIZE - 1 downto 0));
     end component;
     
-    
+    --Signals
     signal mux1_out, mux2_out           : signed(7 downto 0);
     signal reg1_in, reg2_in, reg2_out   : signed(15 downto 0);
     signal reg3_in, reg3_out            : signed(19 downto 0);
     
-
+    --constants
     constant reg12_size                 : NATURAL   := 16;
     constant reg3_size                  : NATURAL   := 20;   
     
@@ -70,18 +70,21 @@ begin
     mux2: MUX_8 port map (  control   => MuxControl,
                             ports_in  => Xx,
                             port_out  => mux2_out );  
+                            
 
     reg1: REG   generic map ( PORT_SIZE => reg12_size )
                 port map (  clk       => clk,
                             clr       => clr,
                             Port_In   => reg1_in,
                             Port_Out  => reg2_in );
+                            
                      
     reg2: REG   generic map (   PORT_SIZE =>  reg12_size)
                 port map (  clk       => clk,
                             clr       => clr,
                             Port_In   => reg2_in,
                             Port_Out  => reg2_out );
+                            
 
     reg3: REG   generic map ( PORT_SIZE =>  reg3_size)
                 port map (  clk       => clk,
@@ -89,6 +92,7 @@ begin
                             Port_In   => reg3_in,
                             Port_Out  => reg3_out );
                             
+    --Output logic
                             
     reg1_in <= mux2_out * mux1_out;
     reg3_in <= reg2_out + reg3_out;

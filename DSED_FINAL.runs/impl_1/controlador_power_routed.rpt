@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Sat Dec 15 12:58:05 2018
+| Date             : Sun Dec 16 15:36:04 2018
 | Host             : DESKTOP-CQ2ECPO running 64-bit major release  (build 9200)
 | Command          : report_power -file controlador_power_routed.rpt -pb controlador_power_summary_routed.pb -rpx controlador_power_routed.rpx
 | Design           : controlador
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.230 |
+| Total On-Chip Power (W)  | 0.229 |
 | Dynamic (W)              | 0.126 |
 | Device Static (W)        | 0.103 |
 | Effective TJA (C/W)      | 4.6   |
@@ -50,18 +50,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1054 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      467 |     63400 |            0.74 |
-|   CARRY4       |    <0.001 |       54 |     15850 |            0.34 |
-|   Register     |    <0.001 |      272 |    126800 |            0.21 |
+| Slice Logic    |    <0.001 |     1013 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      449 |     63400 |            0.71 |
+|   Register     |    <0.001 |      279 |    126800 |            0.22 |
+|   CARRY4       |    <0.001 |       43 |     15850 |            0.27 |
 |   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
 |   Others       |     0.000 |      166 |       --- |             --- |
-| Signals        |    <0.001 |      831 |       --- |             --- |
+| Signals        |    <0.001 |      828 |       --- |             --- |
 | Block RAM      |    <0.001 |      128 |       135 |           94.81 |
 | MMCM           |     0.121 |        1 |         6 |           16.67 |
 | I/O            |     0.003 |       39 |       210 |           18.57 |
 | Static Power   |     0.103 |          |           |                 |
-| Total          |     0.230 |          |           |                 |
+| Total          |     0.229 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -148,9 +148,10 @@ Table of Contents
 | controlador                                  |     0.126 |
 |   utt0                                       |     0.121 |
 |     inst                                     |     0.121 |
-|   utt1                                       |    <0.001 |
-|   uut2                                       |    <0.001 |
-|   uut3                                       |    <0.001 |
+|   uut1                                       |    <0.001 |
+|     utt1                                     |    <0.001 |
+|     uut2                                     |    <0.001 |
+|     uut3                                     |    <0.001 |
 |   uut5                                       |    <0.001 |
 |     controller                               |    <0.001 |
 |     dataPath                                 |    <0.001 |

@@ -11,14 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="24020000000fs"></ZoomStartTime>
-      <ZoomEndTime time="24067000001fs"></ZoomEndTime>
-      <Cursor1Time time="24138333000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="762000000001fs"></ZoomEndTime>
+      <Cursor1Time time="656000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="122"></NameColumnWidth>
+      <ValueColumnWidth column_width="89"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="23" />
    <wvobject fp_name="/controlador_tb/clk_100Mhz" type="logic">
       <obj_property name="ElementShortName">clk_100Mhz</obj_property>
       <obj_property name="ObjectShortName">clk_100Mhz</obj_property>
@@ -90,5 +91,25 @@
    <wvobject fp_name="/controlador_tb/uut/utt0/inst/clk_out1" type="logic">
       <obj_property name="ElementShortName">clk_out1</obj_property>
       <obj_property name="ObjectShortName">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controlador_tb/uut/uut5/Sample_Out" type="array">
+      <obj_property name="ElementShortName">Sample_Out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Sample_Out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controlador_tb/uut/uut5/Sample_Out_ready" type="logic">
+      <obj_property name="ElementShortName">Sample_Out_ready</obj_property>
+      <obj_property name="ObjectShortName">Sample_Out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controlador_tb/uut/uut5/Sample_In_enable" type="logic">
+      <obj_property name="ElementShortName">Sample_In_enable</obj_property>
+      <obj_property name="ObjectShortName">Sample_In_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controlador_tb/uut/uut5/controller/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/controlador_tb/uut/PWM_in" type="array">
+      <obj_property name="ElementShortName">PWM_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">PWM_in[7:0]</obj_property>
    </wvobject>
 </wave_config>

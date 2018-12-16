@@ -28,6 +28,7 @@ Compiling architecture structure of entity xil_defaultlib.clk_12_Meg [clk_12_meg
 Compiling architecture behavioral of entity xil_defaultlib.en_4_cycles [en_4_cycles_default]
 Compiling architecture behavioral of entity xil_defaultlib.FSMD_microphone [fsmd_microphone_default]
 Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.audio_interface [audio_interface_default]
 Compiling architecture behavioral of entity xil_defaultlib.FIR_Controller [fir_controller_default]
 Compiling architecture behavioral of entity xil_defaultlib.MUX_8 [mux_8_default]
 Compiling architecture behavioral of entity xil_defaultlib.REG [\REG(port_size=16)\]

@@ -21,41 +21,34 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Seconds2segments is
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
            addrA : in unsigned (18 downto 0);
            addrB : in unsigned (18 downto 0);
+           alarm : out STD_LOGIC;
            seg   : out STD_LOGIC_VECTOR (7 downto 0);
            an    : out STD_LOGIC_VECTOR (7 downto 0));
 end Seconds2segments;
 
 architecture Behavioral of Seconds2segments is
-
+    --Components
     component decod7s 
-    Port ( D : in  STD_LOGIC_VECTOR (3 downto 0);					 -- entrada de datos en binario
-           S : out  STD_LOGIC_VECTOR (7 downto 0));   	 -- salidas para los segmentos
+        Port ( D : in  STD_LOGIC_VECTOR (3 downto 0);					
+               S : out  STD_LOGIC_VECTOR (7 downto 0));   	
     end component;
-
-
-    signal divider, addr, size  : unsigned( 18 downto 0 );
-    signal counter              : unsigned( 14 downto 0);
     
-    signal an_reg   : STD_LOGIC_VECTOR (7 downto 0);
-    
-    signal uSeconds, dSeconds : STD_LOGIC_VECTOR (4 downto 0);
-    signal S :  STD_LOGIC_VECTOR (7 downto 0);
-    signal D :  STD_LOGIC_VECTOR (3 downto 0);
+    --Signals
+    signal uSeconds, dSeconds   : STD_LOGIC_VECTOR (6 downto 0);
+    signal addr                 : unsigned( 6 downto 0 );
+    signal divider, src0, src1        : unsigned(6 downto 0);
+    signal counter              : unsigned( 14 downto 0); 
+    signal an_reg               : STD_LOGIC_VECTOR (7 downto 0);
+    signal S                    : STD_LOGIC_VECTOR (7 downto 0);
+    signal D                    : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
 
@@ -64,50 +57,61 @@ begin
                    S => S);
                                 
     process(clk) 
+    
+    
     begin
         if(reset = '1') then
             counter <= (others => '0');
         elsif(rising_edge(clk)) then
             counter <= counter + 1;
+            
+            if(addrA(18 downto 12) = 127) then
+                alarm <= '1';
+            elsif(addrA(18 downto 12) = 112 ) then
+                alarm <= '1';
+            else
+                alarm <= '0';
+            end if;
+            
         end if;
     end process;
 
+
+    -- Anodes out!
     with counter(14 downto 13)
-    select an_reg <=    "11111110" when  "00",
+    select an_reg <=    "11111110" when  "00",   --Using only 4 displays. Fr ~ 12M/(2^15) = 366Hz
                         "11111101" when  "01",
                         "11111011" when  "10",
                         "11110111" when  "11",
                         "11111111" when others;
-      
-      
-      
-      
-      
-      
-      
                         
+
+    --Comparation source selection! -->                                
     with counter(14) 
-        select addr <=  addrA when  '1',
-                        addrB when '0',
-                        (others => '0') when others; 
-                                    
+        select src0 <=  (others => '1')     when  '1',
+                        addrB(18 downto 12) when  others;
     with counter(14) 
-        select size <=  (others => '1') when  '1',
-                        (others => '0') when  others;
-                                                                   
-    divider  <= ( size - addr) / 20000; 
-    uSeconds <= STD_LOGIC_VECTOR(divider(4 downto 0) rem 10 );
-    dSeconds <= STD_LOGIC_VECTOR(divider(4 downto 0) / 10 )  ;
+        select src1 <=  addrA(18 downto 12) when  '1',
+                        (others => '0')     when  others;                    
+                        
+     -- Logic!
+     
+    divider <= (src0 - src1) / 5;   -->srcX son multiplos de 2^12 = 4096. Por tanto 4096*5 = 20480.
+                                    -- Comentemos un error en cada segundo, pero reduccimos en más de la
+                                    -- mitad el area y el número de nets utilizadas.                
+                                                                               
+    uSeconds <= STD_LOGIC_VECTOR(divider rem 10 );
+    dSeconds <= STD_LOGIC_VECTOR(divider / 10 )  ;
     
+    --Segments output selection!! 
     with counter(13)
     select D <=  uSeconds(3 downto 0) when '0',
                  dSeconds(3 downto 0) when '1',
                  (others => '0') when  others;
-                 
+    
+    --Output Logic             
     an <= an_reg;
     seg <= S;
                  
-                 
-                 
-
+              
 end Behavioral;

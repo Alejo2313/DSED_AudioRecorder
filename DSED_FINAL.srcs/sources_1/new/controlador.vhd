@@ -59,24 +59,31 @@ architecture Behavioral of controlador is
             clk_in1     : in std_logic);
     end component;
     
-
-    component en_4_cycles is
-        Port ( clk_12megas  : in STD_LOGIC;
-               reset        : in STD_LOGIC;
-               clk_3megas   : out STD_LOGIC;
-               en_2_cycles  : out STD_LOGIC;
-               en_4_cycles  : out STD_LOGIC);
-    end component;
     
-    component FSMD_microphone is
-        Port ( clk_12megas      : in STD_LOGIC;
-               reset            : in STD_LOGIC;
-               enable_4_cycles  : in STD_LOGIC;
-               micro_data       : in STD_LOGIC;
-               sample_out       : out STD_LOGIC_VECTOR (sample_size -1 downto 0);
-               sample_out_ready : out STD_LOGIC);
-    end component;
+    component audio_interface 
+        Port (  clk_12megas : in STD_LOGIC;
+                reset : in STD_LOGIC;
+                --Recording ports
+                --To/From the controller
+                record_enable:  in STD_LOGIC;
+                sample_out:     out STD_LOGIC_VECTOR (sample_size-1 downto 0);
+                sample_out_ready: out STD_LOGIC;
+                --To/From the microphone
+                micro_clk : out STD_LOGIC;
+                micro_data : in STD_LOGIC;
+                micro_LR : out STD_LOGIC;
+                --Playing ports
+                --To/From the controller
+                play_enable: in STD_LOGIC;
+                sample_in: in std_logic_vector(sample_size-1 downto 0);
+                sample_request: out std_logic;
+                --To/From the mini-jack
+                jack_sd : out STD_LOGIC;
+                jack_pwm : out STD_LOGIC);
+    end component;   
     
+    
+         
     component blk_mem_gen_0
       PORT (
         clka : IN STD_LOGIC;
@@ -98,21 +105,13 @@ architecture Behavioral of controlador is
                 Sample_Out_ready    : out STD_LOGIC );
                 
     end component;
-    
-    component PWM is
-        Port ( clk_12megas      : in STD_LOGIC;
-               reset            : in STD_LOGIC;
-               en_2_cycles      : in STD_LOGIC;
-               sample_in        : in STD_LOGIC_VECTOR (sample_size -1 downto 0);
-               pwm_pulse        : out STD_LOGIC;
-               sample_request   : out STD_LOGIC);
-    end component;
-    
+
     component Seconds2segments 
         Port ( clk : in STD_LOGIC;
                reset : in STD_LOGIC;
                addrA : in unsigned (18 downto 0);
                addrB : in unsigned (18 downto 0);
+               alarm : out STD_LOGIC;
                seg : out STD_LOGIC_VECTOR (7 downto 0);
                an : out STD_LOGIC_VECTOR (7 downto 0));
     end component;
@@ -123,9 +122,7 @@ architecture Behavioral of controlador is
  
     signal state, state_n   : state_t;
     signal clk_12megas      : STD_LOGIC;
-    signal clk_3megas       : STD_LOGIC;
-    signal en_2_cycles      : STD_LOGIC;
-    signal en_4cycles      : STD_LOGIC;
+
     signal sample, memory_out, PWM_in ,PWM_in_n         : STD_LOGIC_VECTOR (sample_size -1 downto 0);
     signal filter_out       : signed (sample_size -1 downto 0);
     signal sample_out_ready : STD_LOGIC;
@@ -137,10 +134,12 @@ architecture Behavioral of controlador is
     signal addra, addra_n       : unsigned(18 downto 0) := (others => '0');     --current address
     signal ena, ena_n           : STD_LOGIC;                                    -- RAM control signals
     signal wea, wea_n           : STD_LOGIC_VECTOR(0 DOWNTO 0);
+    signal alarm                : STD_LOGIC;
     
     signal Sample_In_enable, Sample_In_enable_n : STD_LOGIC;
     signal Sample_Out_ready_filter    : STD_LOGIC;
     
+    signal Sample_in_filtet     : signed( sample_size -1 downto 0);
     signal led_out_reg, led_out_n : STD_LOGIC_VECTOR(7 downto 0);
         
     constant full_memory    : unsigned(18 downto 0) := (others => '1');
@@ -155,40 +154,27 @@ begin
                     reset       => reset,
                     clk_in1     => clk_100Mhz);
      
-     
-    
-     utt1: en_4_cycles
-        port map (  clk_12megas     => clk_12megas,
-                    reset           => reset,
-                    clk_3megas      => clk_3megas,
-                    en_2_cycles     => en_2_cycles,
-                    en_4_cycles     => en_4cycles);
-                    
-                    
-     uut2: FSMD_microphone
-        port map (  clk_12megas         => clk_12megas,
-                    reset               => reset,
-                    enable_4_cycles     => en_4cycles,
-                    micro_data          => micro_data,
-                    sample_out          => sample,
-                    sample_out_ready    => sample_out_ready);
-  
-  
-                    
-     uut3: PWM 
-        port map (  clk_12megas     => clk_12megas,
-                    reset           => reset,
-                    en_2_cycles     => en_2_cycles,
-                    sample_in       => PWM_in,
-                    pwm_pulse       => jack_pwm,
-                    sample_request  => sample_request);   
+    uut1: audio_interface 
+        Port map (  clk_12megas => clk_12megas,
+                    reset       => reset,
+                    sample_out  => sample,
+                    micro_clk   => micro_clk,
+                    micro_data  => micro_data,
+                    micro_LR    => micro_LR,
+                    play_enable => ena_n,
+                    sample_in   => PWM_in,
+                    jack_sd     => jack_sd,
+                    jack_pwm    => jack_pwm,
+                    record_enable   => ena_n,                    
+                    sample_request  => sample_request,
+                    sample_out_ready => sample_out_ready);
                     
     uut5: fir_filter 
         port map (  clk                 => clk_12megas,
                     reset               => reset,
-                    Sample_in           => signed (memory_out),
+                    Sample_in           => Sample_in_filtet,
                     Sample_In_enable    => Sample_In_enable,
-                    filter_select       => SW1,
+                    filter_select       => SW0,
                     Sample_Out          => filter_out,
                     Sample_Out_ready    => Sample_Out_ready_filter);
                     
@@ -207,21 +193,15 @@ begin
                     reset   => reset,
                     addrA   => last_b,
                     addrB   => cur_b,
+                    alarm   => alarm,
                     seg     => seg,
                     an      => an
                     );
        
-                            
-    micro_LR    <= '1';
-    jack_sd     <= '1';   
-    micro_clk   <= clk_3megas;                        
+     
+    Sample_in_filtet <= signed ( (NOT memory_out(7))&memory_out(6 downto 0));                                      
     led_out     <=  led_out_reg;
-    
-    
-    
-    
-    
-    
+
     Process(clk_12megas, reset)
         
     begin
@@ -281,18 +261,24 @@ begin
                 
             when PLAY   =>
                 state_out <= "100";
-                if(cur_b = last_b) then
-                    state_n <= IDLE;
-                end if;
                 
+                if( ((NOT SW1)AND SW0) = '1') then
+                    if(cur_b = 0) then
+                        state_n <= IDLE;
+                    end if;
+                else
+                    if(cur_b = last_b) then
+                        state_n <= IDLE;
+                    end if;
+                end if;
+
+
             when DELETE => 
                 state_out <= "101";
                 state_n     <= IDLE;
            
         end case;
     end process;
-    
-    
     
     
     Process(state, Sample_Out_ready_filter, sample_out_ready, sample_request ) 
@@ -320,51 +306,60 @@ begin
                 -- IDLE state -> waiting for action
             when IDLE =>
                 PWM_in_n<= (others => '0');
-                cur_b_n <= (others => '0');
                 ena_n <= '0';
                 wea_n <= "0";
+                 
+                if( SW1 = '1') then
+                    cur_b_n <= (others => '0');                            
+                else 
+                    if( SW0 = '1') then
+                        cur_b_n <= last_b;
+                    else
+                        cur_b_n <= (others => '0');
+                    end if;      
+                    
+                end if;
+                    
                 -- Recording...
                 
             when REC  =>
                 ena_n <= '1';
-                PWM_in_n <= (others =>'0');
+               -- PWM_in_n <= (others =>'0');
                 led_out_n <= memory_out;
                 
-                if(last_b /= full_memory) then
-                    --ALARM : 3 seconds before ((2^19 -1)-(3*20e3))
-                    
-                    if(last_b > 464287) then
-                        if(last_b < 464292) then
-                            PWM_in_n <= (others =>'1');
-                        end if;
-                    end if;
-                  -- end Alarm           
-                             
-                    if( sample_out_ready = '1') then
-                       addra_n <=  last_b;
-                       wea_n <= "1";
-                       last_b_n <= last_b + 1; 
-                    else
-                        wea_n <= "0";
-                    end if;                    
-                else
-                    --Alarm -> full memeory
-                    PWM_in_n <= (others => '1');
+                if( alarm = '1') then
+                        PWM_in_n <= STD_LOGIC_VECTOR( unsigned(PWM_in) +1);
                 end if;
+                
+                if( last_b /= full_memory) then           
+                    if( sample_out_ready = '1') then
+                        addra_n <=  last_b;
+                        wea_n <= "1";
+                        last_b_n <= last_b + 1; 
+                     else
+                        wea_n <= "0";
+                     end if;                    
+                end if;
+  
                 
             when PLAY =>
                 ena_n <= '1';  
                 led_out_n <= PWM_in; 
                 
                 if(sample_request = '1') then
-                    addra_n <= cur_b;
-                    cur_b_n <= cur_b + 1;
-                    
-                    if( SW0 = '1') then
+                    addra_n <= cur_b;                    
+                    if( SW1 = '1') then
                         Sample_In_enable_n <= '1';
                         PWM_in_n <= STD_LOGIC_VECTOR((NOT filter_out(7))&filter_out(6 downto 0) );--filter out
+                        cur_b_n <= cur_b + 1;
+
                     else
                          PWM_in_n <=  memory_out;
+                         if( SW0 = '1' ) then
+                            cur_b_n <= cur_b - 1;
+                         else 
+                            cur_b_n <= cur_b + 1;
+                         end if;
                     end if;
                     
                 else

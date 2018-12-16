@@ -36,10 +36,14 @@ entity REG is
 end REG;
 
 architecture Behavioral of REG is
+    --Signals 
     signal next_out : signed(PORT_SIZE - 1 downto 0):=(others => '0');
+    
 begin
+
     process(clk, clr)
         begin
+            --Synchronus clear
             if(rising_edge(clk)) then
                 if(clr = '1') then
                     next_out <= (others => '0');
@@ -48,6 +52,8 @@ begin
                 end if;
             end if;
     end process;
+    
+    --Output logic
     Port_Out <= next_out;
     
 end Behavioral;

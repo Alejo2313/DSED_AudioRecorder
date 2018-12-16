@@ -58,8 +58,8 @@ architecture Behavioral of fir_filter is
     
     constant low_pass_c             : MUX_IN_8_8 := ("00000101", "00011111","00111001","00011111","00000101");
     constant band_pass_c            : MUX_IN_8_8 := ("10000001", "10011111","01001101","10011111","10000001");
-    
     constant zero_MUX_8             : MUX_IN_8_8 := ("00000000", "00000000","00000000","00000000","00000000");
+    
     
     signal c_in, x_in   : MUX_IN_8_8                    := zero_MUX_8;
     signal clr          : STD_LOGIC;                   
@@ -87,12 +87,14 @@ begin
                     clr                 => clr,
                     y                   => sample_o);           --tamaños no encajan
                     
+                    
     --Routing and registers
     process(clk, Reset) 
     begin
         if(Reset = '1') then
             x_in <= zero_MUX_8;
         elsif( rising_edge(clk)) then
+        
             if(Sample_In_enable = '1') then
                 x_in(0) <= Sample_In;
                 x_in(1) <=  x_in(0);
@@ -108,11 +110,11 @@ begin
             end if;
             
             if(sample_ready = '1') then
-                Sample_Out  <= sample_o(14 downto 7);  -- EXPLICACION: El numero más grande que aparecerá a la salida es
-                                                       -- 2*(1-2^(-7))^2 = 1.968...., por tanto, los bits más significativos
-                                                       -- estarán desde B13 hasta B0 (la salida tiene formato <6,14>), los demás
-                                                       -- son extensión de signo. Como necesitamos truncar al formato <1,7>, cogemos
-                                                       -- el B14 como signo 
+                Sample_Out  <= sample_o(19)&sample_o(15 downto 9);  -- EXPLICACION: El numero más grande que aparecerá a la salida es
+                                                                    -- 5*(1-2^(-7))^2 = 4.96...., por tanto, los bits más significativos
+                                                                    -- estarán desde B15 hasta B0 (la salida tiene formato <6,14>)
+                                                                    --. Como necesitamos truncar al formato <1,7>, cogemos
+                                                                    -- el B19 como signo 
             end if;
             
             Sample_out_ready    <= sample_ready;
