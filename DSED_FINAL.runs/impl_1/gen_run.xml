@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1544970828">
-  <File Type="PWROPT-DRC" Name="controlador_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="controlador_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="controlador_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="controlador_power_routed.rpx"/>
   <File Type="PA-TCL" Name="controlador.tcl"/>
-  <File Type="OPT-HWDEF" Name="controlador.hwdef"/>
+  <File Type="INIT-TIMING" Name="controlador_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="controlador_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="controlador_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="controlador.vdi"/>
   <File Type="OPT-DCP" Name="controlador_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="controlador.hwdef"/>
   <File Type="OPT-DRC" Name="controlador_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="controlador_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="controlador_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="controlador_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="controlador_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="controlador_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="controlador.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="controlador_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="controlador.drc"/>
+  <File Type="BG-BIN" Name="controlador.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="controlador_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="controlador.msk"/>
+  <File Type="BG-DRC" Name="controlador.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="controlador_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="controlador.bgn"/>
+  <File Type="BITSTR-MSK" Name="controlador.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="controlador_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="controlador.bgn"/>
   <File Type="ROUTE-PWR" Name="controlador_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="controlador_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="controlador_route_status.rpt"/>

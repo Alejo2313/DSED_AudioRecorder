@@ -83,7 +83,7 @@ BEGIN
     
     
     write_process : PROCESS (clk)
-        FILE out_file : text OPEN write_mode IS "D:\OneDrive\Documentos\Universidad\DSED\DSED_PROJ\sample_out.dat";
+        FILE out_file : text OPEN write_mode IS "D:\OneDrive\Documentos\Universidad\DSED\DSED_PROJ\sample_out_h.dat";
         VARIABLE out_line : line;
 
     BEGIN
