@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1544970828">
-  <File Type="PA-TCL" Name="controlador.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1547754363">
   <File Type="RDS-PROPCONSTRS" Name="controlador_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="controlador.tcl"/>
   <File Type="RDS-RDS" Name="controlador.vds"/>
   <File Type="RDS-UTIL" Name="controlador_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="controlador_utilization_synth.pb"/>
@@ -48,6 +48,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/REG.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RGB_controller.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -103,7 +109,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="C:/Users/Alejo/Downloads/Nexys4DDR_Master.xdc">
+    <File Path="$PSRCDIR/constrains/Nexys4DDR_Master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

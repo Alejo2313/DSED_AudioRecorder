@@ -57,7 +57,9 @@ architecture Behavioral of fir_filter is
     
     
     constant low_pass_c             : MUX_IN_8_8 := ("00000101", "00011111","00111001","00011111","00000101");
-    constant band_pass_c            : MUX_IN_8_8 := ("10000001", "10011111","01001101","10011111","10000001");
+    constant band_pass_c            : MUX_IN_8_8 := ("11111111", "11100110","01001101","11100110","11111111");
+
+  --  constant band_pass_c            : MUX_IN_8_8 := ("10000001", "10011010","01001101","10011010","10000001");
     constant zero_MUX_8             : MUX_IN_8_8 := ("00000000", "00000000","00000000","00000000","00000000");
     
     
@@ -110,7 +112,7 @@ begin
             end if;
             
             if(sample_ready = '1') then
-                Sample_Out  <= sample_o(19)&sample_o(15 downto 9);  -- EXPLICACION: El numero más grande que aparecerá a la salida es
+                Sample_Out  <= sample_o(19)&sample_o(13 downto 7);  -- EXPLICACION: El numero más grande que aparecerá a la salida es
                                                                     -- 5*(1-2^(-7))^2 = 4.96...., por tanto, los bits más significativos
                                                                     -- estarán desde B15 hasta B0 (la salida tiene formato <6,14>)
                                                                     --. Como necesitamos truncar al formato <1,7>, cogemos

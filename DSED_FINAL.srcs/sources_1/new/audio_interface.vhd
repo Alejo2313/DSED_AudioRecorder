@@ -44,7 +44,8 @@ entity audio_interface is
             sample_request: out std_logic;
             --To/From the mini-jack
             jack_sd : out STD_LOGIC;
-            jack_pwm : out STD_LOGIC);
+            jack_pwm : out STD_LOGIC;
+            en_2_cycles  : out STD_LOGIC);
 end audio_interface;
 
 architecture Behavioral of audio_interface is
@@ -80,7 +81,7 @@ architecture Behavioral of audio_interface is
  --Signals
  
     signal clk_3megas   : STD_LOGIC;
-    signal en_2_cycles  : STD_LOGIC;
+    signal en_2cycles   : STD_LOGIC;
     signal en_4cycles   : STD_LOGIC;
     signal sample       : STD_LOGIC_VECTOR (sample_size -1 downto 0);
     signal sample_out_r : STD_LOGIC;
@@ -106,7 +107,7 @@ begin
      uut3: PWM 
         port map (  clk_12megas => clk_12megas,
                     reset       => reset,
-                    en_2_cycles => en_2_cycles,
+                    en_2_cycles => en_2cycles,
                     sample_in   => sample_in,
                     pwm_pulse   => jack_pwm,
                     sample_request  => sample_request);   
@@ -114,5 +115,7 @@ begin
     micro_LR    <= '1';
     jack_sd     <= '1';   
     micro_clk   <= clk_3megas; 
-
+    en_2_cycles <= en_2cycles;
+    
+    
 end Behavioral;

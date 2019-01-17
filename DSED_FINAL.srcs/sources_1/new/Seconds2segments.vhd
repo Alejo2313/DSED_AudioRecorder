@@ -49,6 +49,8 @@ architecture Behavioral of Seconds2segments is
     signal an_reg               : STD_LOGIC_VECTOR (7 downto 0);
     signal S                    : STD_LOGIC_VECTOR (7 downto 0);
     signal D                    : STD_LOGIC_VECTOR (3 downto 0);
+    
+    signal  R, G, B             : STD_LOGIC_VECTOR(7 downto 0);
 
 begin
 
@@ -71,6 +73,19 @@ begin
                 alarm <= '1';
             else
                 alarm <= '0';
+            end if;
+            
+            
+            if(addrA(18) = '0') then
+                B <= (others => '1');
+                R <= STD_LOGIC_VECTOR(addrA(17 downto 10));
+                G <= STD_LOGIC_VECTOR(addrA(17 downto 10));
+                
+            else
+                R <= (others => '1');
+                G <= STD_LOGIC_VECTOR(NOT addrA(17 downto 10));
+                B <= STD_LOGIC_VECTOR(NOT addrA(17 downto 10));
+                
             end if;
             
         end if;

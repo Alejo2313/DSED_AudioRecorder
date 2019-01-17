@@ -3,113 +3,61 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="controlador_tb_behav.wdb" id="1">
+      <db_ref path="fir_data_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="controlador_tb" />
+            <top_module name="fir_data_tb" />
             <top_module name="package_dsed" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="762000000001fs"></ZoomEndTime>
-      <Cursor1Time time="656000000000fs"></Cursor1Time>
+      <ZoomEndTime time="644000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="122"></NameColumnWidth>
-      <ValueColumnWidth column_width="89"></ValueColumnWidth>
+      <NameColumnWidth column_width="148"></NameColumnWidth>
+      <ValueColumnWidth column_width="59"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
-   <wvobject fp_name="/controlador_tb/clk_100Mhz" type="logic">
-      <obj_property name="ElementShortName">clk_100Mhz</obj_property>
-      <obj_property name="ObjectShortName">clk_100Mhz</obj_property>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/fir_data_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/controlador_tb/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/fir_data_tb/clk2" type="logic">
+      <obj_property name="ElementShortName">clk2</obj_property>
+      <obj_property name="ObjectShortName">clk2</obj_property>
    </wvobject>
-   <wvobject fp_name="/controlador_tb/BTNL" type="logic">
-      <obj_property name="ElementShortName">BTNL</obj_property>
-      <obj_property name="ObjectShortName">BTNL</obj_property>
+   <wvobject fp_name="/fir_data_tb/Sample_In" type="array">
+      <obj_property name="ElementShortName">Sample_In[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Sample_In[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/controlador_tb/BTNC" type="logic">
-      <obj_property name="ElementShortName">BTNC</obj_property>
-      <obj_property name="ObjectShortName">BTNC</obj_property>
+   <wvobject fp_name="/fir_data_tb/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/controlador_tb/BTNR" type="logic">
-      <obj_property name="ElementShortName">BTNR</obj_property>
-      <obj_property name="ObjectShortName">BTNR</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/jack_pwm" type="logic">
-      <obj_property name="ElementShortName">jack_pwm</obj_property>
-      <obj_property name="ObjectShortName">jack_pwm</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut3/pwm_pulse" type="logic">
-      <obj_property name="ElementShortName">pwm_pulse</obj_property>
-      <obj_property name="ObjectShortName">pwm_pulse</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut6/dina" type="array">
-      <obj_property name="ElementShortName">dina[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dina[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut6/douta" type="array">
-      <obj_property name="ElementShortName">douta[7:0]</obj_property>
-      <obj_property name="ObjectShortName">douta[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut3/sample_request" type="logic">
-      <obj_property name="ElementShortName">sample_request</obj_property>
-      <obj_property name="ObjectShortName">sample_request</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut6/addra" type="array">
-      <obj_property name="ElementShortName">addra[18:0]</obj_property>
-      <obj_property name="ObjectShortName">addra[18:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/last_b" type="array">
-      <obj_property name="ElementShortName">last_b[18:0]</obj_property>
-      <obj_property name="ObjectShortName">last_b[18:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut3/sample_in" type="array">
-      <obj_property name="ElementShortName">sample_in[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sample_in[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/state" type="other">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut3/pwm_pulse" type="logic">
-      <obj_property name="ElementShortName">pwm_pulse</obj_property>
-      <obj_property name="ObjectShortName">pwm_pulse</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut2/sample_out_ready" type="logic">
-      <obj_property name="ElementShortName">sample_out_ready</obj_property>
-      <obj_property name="ObjectShortName">sample_out_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut2/sample_out" type="array">
-      <obj_property name="ElementShortName">sample_out[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sample_out[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/utt0/inst/clk_out1" type="logic">
-      <obj_property name="ElementShortName">clk_out1</obj_property>
-      <obj_property name="ObjectShortName">clk_out1</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut5/Sample_Out" type="array">
-      <obj_property name="ElementShortName">Sample_Out[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Sample_Out[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut5/Sample_Out_ready" type="logic">
-      <obj_property name="ElementShortName">Sample_Out_ready</obj_property>
-      <obj_property name="ObjectShortName">Sample_Out_ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut5/Sample_In_enable" type="logic">
+   <wvobject fp_name="/fir_data_tb/Sample_In_enable" type="logic">
       <obj_property name="ElementShortName">Sample_In_enable</obj_property>
       <obj_property name="ObjectShortName">Sample_In_enable</obj_property>
    </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/uut5/controller/state" type="other">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
+   <wvobject fp_name="/fir_data_tb/filter_select" type="logic">
+      <obj_property name="ElementShortName">filter_select</obj_property>
+      <obj_property name="ObjectShortName">filter_select</obj_property>
    </wvobject>
-   <wvobject fp_name="/controlador_tb/uut/PWM_in" type="array">
-      <obj_property name="ElementShortName">PWM_in[7:0]</obj_property>
-      <obj_property name="ObjectShortName">PWM_in[7:0]</obj_property>
+   <wvobject fp_name="/fir_data_tb/Sample_Out" type="array">
+      <obj_property name="ElementShortName">Sample_Out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Sample_Out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fir_data_tb/Sample_Out_ready" type="logic">
+      <obj_property name="ElementShortName">Sample_Out_ready</obj_property>
+      <obj_property name="ObjectShortName">Sample_Out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fir_data_tb/count" type="other">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fir_data_tb/fin" type="logic">
+      <obj_property name="ElementShortName">fin</obj_property>
+      <obj_property name="ObjectShortName">fin</obj_property>
    </wvobject>
 </wave_config>

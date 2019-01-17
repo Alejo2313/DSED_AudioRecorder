@@ -45,7 +45,8 @@ entity controlador is
            state_out    : out STD_LOGIC_VECTOR(2 downto 0);
            
            seg          : out STD_LOGIC_VECTOR (7 downto 0);
-           an           : out STD_LOGIC_VECTOR (7 downto 0));
+           an           : out STD_LOGIC_VECTOR (7 downto 0);
+           RGB          : out STD_LOGIC_VECTOR (2 downto 0));
 end controlador;
 
 architecture Behavioral of controlador is
@@ -79,7 +80,8 @@ architecture Behavioral of controlador is
                 sample_request: out std_logic;
                 --To/From the mini-jack
                 jack_sd : out STD_LOGIC;
-                jack_pwm : out STD_LOGIC);
+                jack_pwm : out STD_LOGIC;
+                en_2_cycles  : out STD_LOGIC);
     end component;   
     
     
@@ -117,11 +119,24 @@ architecture Behavioral of controlador is
     end component;
     
     
+    component RGB_controller 
+        Port (  clk   : in STD_LOGIC;
+                reset : in  STD_LOGIC;
+                addrA : in unsigned (18 downto 0);
+                en_2_cycles  : in STD_LOGIC;
+                R : out STD_LOGIC;
+                G : out STD_LOGIC;
+                B : out STD_LOGIC);
+    end component;
+    
+    
+
     
  --Signals
  
     signal state, state_n   : state_t;
     signal clk_12megas      : STD_LOGIC;
+    signal en_2cycles  : STD_LOGIC;
 
     signal sample, memory_out, PWM_in ,PWM_in_n         : STD_LOGIC_VECTOR (sample_size -1 downto 0);
     signal filter_out       : signed (sample_size -1 downto 0);
@@ -167,7 +182,8 @@ begin
                     jack_pwm    => jack_pwm,
                     record_enable   => ena_n,                    
                     sample_request  => sample_request,
-                    sample_out_ready => sample_out_ready);
+                    sample_out_ready => sample_out_ready,
+                    en_2_cycles => en_2cycles);
                     
     uut5: fir_filter 
         port map (  clk                 => clk_12megas,
@@ -197,7 +213,14 @@ begin
                     seg     => seg,
                     an      => an
                     );
-       
+    uut8: RGB_controller
+        port map (  clk => clk_12megas,
+                    reset => reset,
+                    addrA => last_b,
+                    en_2_cycles => en_2cycles,
+                    R   => RGB(0),
+                    G   => RGB(1),
+                    B   => RGB(2));       
      
     Sample_in_filtet <= signed ( (NOT memory_out(7))&memory_out(6 downto 0));                                      
     led_out     <=  led_out_reg;
@@ -258,6 +281,7 @@ begin
                 else
                     state_n <= IDLE;
                 end if;
+                
                 
             when PLAY   =>
                 state_out <= "100";
